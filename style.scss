@@ -1,0 +1,18 @@
+@import 'styles/app-layout';
+@import 'styles/mixins';
+@import 'styles/guideline';
+
+@import 'styles/header/header.scss';
+@import 'styles/content/content.scss';
+@import 'styles/footer/footer.scss';
+
+@include tablet {
+    @import 'styles/content/content-tablet.scss';
+    @import 'styles/header/header-tablet.scss';
+}
+
+@include mobile {
+    @import 'styles/header/header-mobile.scss';
+    @import 'styles/content/content-mobile.scss';
+}
+

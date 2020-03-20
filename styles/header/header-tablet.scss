@@ -1,0 +1,8 @@
+@import '../mixins';
+
+.menu-container {
+    @include hamburger-icon;
+}
+ul {
+    display: none;
+}

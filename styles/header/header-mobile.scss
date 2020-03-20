@@ -1,0 +1,15 @@
+
+@import '../mixins';
+
+.menu-container {
+    @include hamburger-icon;
+    @include flex-item(1, 1, auto);
+}
+
+ul {
+    display: none;
+}
+
+.header h1 {
+    display: none;
+}

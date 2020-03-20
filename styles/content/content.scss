@@ -1,0 +1,51 @@
+@import '../guideline';
+@import '../mixins';
+.sections-container {
+    @include flex-container;
+    @include flex-item(1, 0, auto);
+    align-content: flex-start;
+    margin-top: $layout-indent;
+    padding: $layout-indent;
+}
+
+.sections-content {
+    display: flex;
+    flex-wrap: nowrap;
+    height: min-content;
+}
+
+.section {
+    @include flex-container;
+    @include flex-item(1, 1, 0);
+    flex-flow: column;
+    border: $section-border;
+    margin: $layout-indent;
+    background-color: tan;
+}
+
+.section-title {
+    align-self: flex-end;
+    font-size: $default-font-size * 1.5;
+    border: $section-border;
+    border-top: none;
+    border-right: none;
+    padding: ($layout-indent * 0.5) ($layout-indent * 3);
+    margin-bottom: $layout-indent;
+}
+
+.section-text {
+    margin: $layout-indent;
+    text-align: justify;
+}
+
+.blue {
+    background-color: turquoise;
+}
+
+.orange {
+    background-color: tomato;
+}
+
+.rose {
+    background-color: rosybrown;
+}

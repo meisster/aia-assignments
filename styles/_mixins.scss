@@ -1,0 +1,24 @@
+@import 'guideline';
+
+@mixin flex-container {
+    display: flex;
+}
+@mixin flex-item($grow, $shrink, $basis) {
+    flex: $grow $shrink $basis;
+}
+@mixin hamburger-icon {
+    background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1200px-Hamburger_icon.svg.png) right no-repeat;
+    background-size: contain;
+    margin-right: $layout-indent;
+    width: 70px;
+}
+@mixin tablet {
+    @media screen and (max-width: $desktop-breakpoint) and (min-width: $tablet-breakpoint) {
+        @content;
+    }
+}
+@mixin mobile {
+    @media screen and (max-width: $tablet-breakpoint - 1) {
+        @content;
+    }
+}

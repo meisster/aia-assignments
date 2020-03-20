@@ -1,0 +1,10 @@
+@import '../guideline';
+
+.footer {
+    border: $section-border;
+    border-left: none;
+    border-right: none;
+    text-align: center;
+    background-color: tan;
+    padding: $layout-indent*2 0;
+}
