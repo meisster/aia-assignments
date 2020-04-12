@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <button>Load</button>
+    <ul></ul>
+    <script>
+        function get(url) {
+            return new Promise((resolve) => {
+                const req = new XMLHttpRequest();
+
+                req.open('GET', url);
+                req.onload = () => {
+                    if (req.status === 200) {
+                        resolve(req.response);
+                    }
+                };
+                req.onerror = () => {
+                    reject(Error("Something went wrong. Try again later."));
+                };
+                req.send();
+            });
+        }
+        $('button').one('click',
+            () => get('guitars.json')
+            .then((response) => {
+                $('body').html(`<p>${response}</p>`)
+            })
+            .catch((error) => {
+                $('body').append(`<p>${error}</p>`)
+            })
+        )
+    </script>
+</body>
+
+</html>
