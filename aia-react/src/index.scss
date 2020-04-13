@@ -1,11 +1,16 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Quicksand', sans-serif !important;
+  overflow: hidden;
+  background-color: #282c34 !important;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, óMenlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
+
+#root > div {
+  width: 100%;
+  height: 100%;
 }

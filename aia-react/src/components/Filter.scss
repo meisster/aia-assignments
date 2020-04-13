@@ -1,0 +1,26 @@
+@import '../styles/guideline';
+.Filter {
+  display: flex;
+  margin: 1rem;
+  justify-content: center;
+  border-radius: 25px;
+  width: 100%;
+  max-width: $item-container-width;
+  z-index: 10;
+  .input-group-custom input {
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    background-clip: border-box;
+    height: 40px;
+  }
+  .dropdown-button button {
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
+  }
+  transition: all ease-in-out 200ms;
+
+  &:focus-within {
+    box-shadow: 0px 21px 37px 0px rgba(0,0,0,0.56);
+    //transform: scale(1.05);
+  }
+}

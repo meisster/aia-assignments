@@ -1,0 +1,22 @@
+@import '../styles/guideline';
+
+.Collection {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  text-align: center;
+  color: whitesmoke;
+  height: 100%;
+  padding: 2rem 4rem;
+  overflow: auto;
+  & h1 {
+    font-size: 4rem;
+  }
+}
+.item-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-width: $item-container-width;
+}

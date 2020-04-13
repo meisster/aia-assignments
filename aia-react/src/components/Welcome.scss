@@ -1,19 +1,25 @@
-.App {
+.Welcome {
   text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  & h1 {
+    font-size: 4rem;
+    margin-bottom: 4rem;
+  }
 }
 
-.App-logo {
+.Welcome-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 10s linear;
+  .Welcome-logo {
+    animation: Welcome-logo-spin infinite 10s linear;
+    margin-bottom: 4rem;
   }
 }
 
-.App-header {
+.Welcome-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -24,11 +30,7 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes Welcome-logo-spin {
   from {
     transform: rotate(0deg);
   }
@@ -36,3 +38,4 @@
     transform: rotate(360deg);
   }
 }
+
