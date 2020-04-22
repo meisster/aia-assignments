@@ -1,14 +1,18 @@
 .AddItem {
   color: whitesmoke;
   display: flex;
+  overflow: auto;
   flex-flow: column;
-  justify-content: center;
   text-align: center;
+  height: 100%;
+
   .form-container {
     margin: 1rem;
     display: flex;
     justify-content: space-evenly;
     flex-flow: row;
+    flex-wrap: wrap;
+
     .Item:hover {
       cursor: default;
     }

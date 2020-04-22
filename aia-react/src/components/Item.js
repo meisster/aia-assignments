@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import "./Item.scss";
+import "../styles/Item.scss";
 
 export default function Item(props) {
     return (

@@ -1,7 +1,7 @@
 import disc from "../assets/compact-disc.svg";
 import React from "react";
 import Button from "react-bootstrap/Button";
-import './Welcome.scss';
+import '../styles/Welcome.scss';
 import {Link} from "react-router-dom";
 
 
@@ -10,7 +10,8 @@ export default function Welcome() {
     return (
         <div className='Welcome'>
             <header className='Welcome-header'>
-                <h1>Welcome to my games collection</h1>
+                <h1>Games collection</h1>
+                <hr style={{marginBottom: "4rem", width: "50%"}}/>
                 <div>
                     <img src={disc}
                          className='Welcome-logo'

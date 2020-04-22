@@ -1,11 +1,11 @@
 import React, {useState} from "react";
-import './Collection.scss';
+import '../styles/Collection.scss';
 import Button from "react-bootstrap/Button";
 import {useHistory} from "react-router-dom";
 import Item from "./Item";
 import items from "../data/items"
 import Filter from "./Filter";
-import {MdAddCircleOutline} from "react-icons/md";
+import {MdAddCircleOutline, MdKeyboardBackspace} from "react-icons/md";
 
 export default function Collection({match}) {
 
@@ -14,16 +14,16 @@ export default function Collection({match}) {
     const [sort, setSort] = useState("");
 
 
-    function onSearchChanged(search) {
-        setSearch(search);
+    function onSearchChanged(query) {
+        setSearch(query);
     }
 
     function onSortChanged(newSort) {
         setSort(newSort);
     }
 
-    function resolveSort(sort) {
-        switch (sort) {
+    function resolveSort(sortBy) {
+        switch (sortBy) {
             case sortType.NAME_A:
                 return (a, b) => a.title > b.title ? 1 : (b.title > a.title) ? -1 : 0;
             case sortType.NAME_Z:
@@ -33,7 +33,7 @@ export default function Collection({match}) {
             case sortType.RATING_L:
                 return (a, b) => a.rating > b.rating ? 1 : (b.rating > a.rating) ? -1 : 0;
             default:
-                return (a, b) => 0;
+                return () => 0;
         }
     }
 
@@ -49,11 +49,17 @@ export default function Collection({match}) {
 
     return (
         <div className="Collection">
-            <h1>This is my games collection</h1>
-            <Button variant="outline-secondary" onClick={() => navigateTo('/')}>Go back</Button>
+            <hr style={{width: "55%"}}/>
+            <h1>Games collection</h1>
+            <hr style={{marginBottom: "2rem", width: "55%"}}/>
             <Button variant="outline-secondary"
-                    style={{width: 150, marginTop: "1rem", borderRadius: 30}}
-                    onClick={() => navigateTo(`${match.path}/add`)}><MdAddCircleOutline/></Button>
+                    style={{borderColor: "#f57c00", width: 150, borderRadius: 30}}
+                    onClick={() => navigateTo('/')}><MdKeyboardBackspace fill='#f57c00'/></Button>
+            <hr style={{marginBottom: "0rem", width: "10%"}}/>
+            <Button variant="outline-secondary"
+                    style={{borderColor: "#f57c00", width: 150, marginTop: "1rem", borderRadius: 30}}
+                    onClick={() => navigateTo(`${match.path}/add`)}><MdAddCircleOutline fill='#f57c00'/></Button>
+            <hr style={{marginBottom: "2rem", marginTop: "2rem", width: "55%"}}/>
             <Filter onSearchChange={onSearchChanged} onSort={onSortChanged}/>
             <div className="item-container">
                 {items.filter(item => item.title.includes(search))

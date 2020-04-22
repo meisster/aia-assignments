@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import './AddItem.scss';
+import '../styles/AddItem.scss';
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
@@ -7,7 +7,7 @@ import Item from "./Item";
 import {useHistory} from "react-router-dom";
 import items from "../data/items"
 
-export default function AddItem(props) {
+export default function AddItem() {
     const [validated, setValidated] = useState(false);
     const [item, setItem] = useState({
         title: "",
@@ -62,9 +62,12 @@ export default function AddItem(props) {
 
     return (
         <div className='AddItem'>
+            <hr style={{marginBottom: "1rem", width: "70%"}}/>
             <h1>Add a new game</h1>
+            <hr style={{marginBottom: "1rem", width: "70%"}}/>
+
             <div className='form-container'>
-                <Form noValidate validated={validated} onSubmit={handleSubmit} className='col-md-7'>
+                <Form noValidate validated={validated} onSubmit={handleSubmit} className='col-md-4'>
                     <Form.Row>
                         <Form.Group as={Col} md="12" controlId="title">
                             <Form.Label>Game's title</Form.Label>
@@ -75,6 +78,8 @@ export default function AddItem(props) {
                                 placeholder="Game's Title"/>
                             <Form.Control.Feedback type="invalid">Please provide game's title</Form.Control.Feedback>
                         </Form.Group>
+                    </Form.Row>
+                    <Form.Row>
                         <Form.Group as={Col} md="12" controlId="description">
                             <Form.Label>Description</Form.Label>
                             <Form.Control
@@ -82,8 +87,9 @@ export default function AddItem(props) {
                                 required
                                 type="text"
                                 placeholder="Description"/>
-                            <Form.Control.Feedback type="invalid">Please provide a short
-                                description</Form.Control.Feedback>
+                            <Form.Control.Feedback type="invalid">
+                                Please provide a short description
+                            </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group as={Col} md="12" controlId="image">
                             <Form.Label>Image</Form.Label>
@@ -92,16 +98,30 @@ export default function AddItem(props) {
                                 required
                                 type="text"
                                 placeholder="Image source"/>
-                            <Form.Control.Feedback type="invalid">Please provide an image url</Form.Control.Feedback>
+                            <Form.Control.Feedback type="invalid">
+                                Please provide an image url
+                            </Form.Control.Feedback>
                         </Form.Group>
                         <Form.Group as={Col} md="12" controlId="rating">
                             <Form.Label>Rating</Form.Label>
-                            <Form.Control
-                                onChange={(event) => onRatingChange(event.target.value)}
-                                required
-                                type="text"
-                                placeholder="Rating"/>
-                            <Form.Control.Feedback type="invalid">Please provide a rating</Form.Control.Feedback>
+                            <Form.Control as="select"
+                                          onChange={(event) => onRatingChange(event.target.value)}
+                                          required
+                                          placeholder="Rating">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                            </Form.Control>
+                            <Form.Control.Feedback type="invalid">
+                                Please provide a rating
+                            </Form.Control.Feedback>
                         </Form.Group>
                     </Form.Row>
                     <div className="form-buttons">
@@ -110,8 +130,7 @@ export default function AddItem(props) {
                     </div>
                 </Form>
                 <div>
-                    <h1>Preview</h1>
-                    <Item className='col-md-3' onItemClick={() => {
+                    <Item className='col-md-4' onItemClick={() => {
                     }}
                           title={item.title} img={item.img} text={item.text}/>
                 </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import "./Filter.scss";
+import "../styles/Filter.scss";
 import InputGroup from "react-bootstrap/InputGroup";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";

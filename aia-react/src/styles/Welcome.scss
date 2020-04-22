@@ -1,9 +1,10 @@
 .Welcome {
   text-align: center;
   font-family: 'Quicksand', sans-serif;
+  overflow: auto;
+
   & h1 {
     font-size: 4rem;
-    margin-bottom: 4rem;
   }
 }
 
@@ -16,6 +17,7 @@
   .Welcome-logo {
     animation: Welcome-logo-spin infinite 10s linear;
     margin-bottom: 4rem;
+    color: goldenrod;
   }
 }
 
