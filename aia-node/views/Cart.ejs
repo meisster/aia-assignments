@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    IKEA store
+</head>
+<body>
+<nav>
+    <a href="/">Products</a>
+    <a href="/cart">Your cart </a>
+</nav>
+<% if(products.length === 0) { %>
+    <p>No products in cart </p>
+<% } else { %>
+<table>
+    <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Count</th>
+        <th></th>
+    </tr>
+    <% for (product of products) { %>
+        <tr>
+            <td><%= product.name %></td>
+            <td><%= product.price %> zł</td>
+            <td><%= product.count %> </td>
+            <td>
+                <form action="/removeFromCart" method="POST">
+                    <input type="hidden" name="id" value="<%= product._id %>">
+                    <button type="submit">Remove from cart</button>
+                </form>
+            </td>
+        </tr>
+    <% } }%>
+</table>
+<div>Summary : <%= sum %> </div>
+<form action="/buy" method="POST">
+    <button type="submit">Buy</button>
+</form>
+</body>
+</html>
